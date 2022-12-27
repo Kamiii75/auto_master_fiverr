@@ -36,7 +36,7 @@ class DefaultButton extends StatelessWidget {
               ),
             ],
             borderRadius: BorderRadius.circular(clr),
-            color: ConstColors.kSecondaryColor),
+            color: ConstColors.btnColor),
         child: Center(
           child: Text(
             txt,

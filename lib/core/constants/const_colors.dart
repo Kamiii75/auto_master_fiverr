@@ -5,7 +5,13 @@ import 'package:flutter/cupertino.dart';
 class ConstColors{
   static Color kPrimaryColor=const Color(0xffe25d37);
 
-  static const Color kSecondaryColor = Color(0xffeb883f);
+  static const Color kSecondaryColor = Color(0xFFF3F3F3);
+
+
+
+  static const ktextColor = Color(0xff1c1c1c);
+  static Color bgColor=const Color(0xff94bfde);
+  static Color btnColor=const Color(0xffeb883f);
 
   static const Color backColor=Color(0xFF000000);
   static const Color appBarColor=Color(0xFF2D2C2C);
