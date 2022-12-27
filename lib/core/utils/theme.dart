@@ -18,7 +18,7 @@ InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(5),
-      borderSide: BorderSide(color: ConstColors.kPrimaryColor.withOpacity(.2)),
+      borderSide: BorderSide(color: ConstColors.kPrimaryColor.withOpacity(.05)),
       gapPadding: 10,
     );
   }
