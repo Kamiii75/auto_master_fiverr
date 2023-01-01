@@ -9,8 +9,9 @@ class ConstColors{
 
 
 
-  static const ktextColor = Color(0xff1c1c1c);
-  static Color bgColor=const Color(0xff94bfde);
+  static const kTextColor = Color(0xff1c1c1c);
+  static const kTextSecColor = Color(0xFFF3F3F3);
+  static Color bgColor=const Color(0xFF2D2C2C);
   static Color btnColor=const Color(0xffeb883f);
 
   static const Color backColor=Color(0xFF000000);

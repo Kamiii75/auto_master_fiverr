@@ -10,7 +10,7 @@ class SmallText extends StatelessWidget {
 
   const SmallText({
     Key? key,
-    this.color = const Color(0xFFccc7c5),
+    this.color = const Color(0xFFF3F3F3),
     required this.text,
     this.size = 12,
     this.height = 1.2,
@@ -23,7 +23,7 @@ class SmallText extends StatelessWidget {
       //textAlign: TextAlign.justify,
       style: GoogleFonts.poiretOne(
         textStyle: TextStyle(
-            color: ConstColors.ktextColor,
+            color: color,
             fontSize: MediaQuery.of(context).size.width * 0.032,
             fontWeight: FontWeight.w700),
       ),

@@ -13,21 +13,23 @@ import 'default_button.dart';
 import 'large_text.dart';
 
 
-class AddCarDialogBox extends StatelessWidget {
-  final ModelVehicle mdl;
+class CustomDialogBox extends StatelessWidget {
+  final String title;
+  final String message;
+  final Function() pressed;
 
-  const AddCarDialogBox({Key? key, required this.mdl}) : super(key: key);
+  const CustomDialogBox({Key? key, required this.title, required this.message, required this.pressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Dialog(
       backgroundColor: ConstColors.bgColor,
-      insetPadding:  EdgeInsets.all(5.h),
+      insetPadding:  EdgeInsets.all(3.w),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.w)), //this right here
       child: SizedBox(
-        height: size.height /2,
+        height: size.height /2.5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,60 +37,40 @@ class AddCarDialogBox extends StatelessWidget {
               padding:  EdgeInsets.symmetric(vertical: 5.h,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   LargeText(
-                    text: 'Add Vehicle',
+                    text: title,
                   ),
                 ],
               ),
             ),
              Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.w,),
-              child: Divider(
+              child: const Divider(
                 height: 2,
                 color: Colors.white,
               ),
             ),
             SizedBox(height: 5.h,),
-            /*Container(
-                padding: const EdgeInsets.only(left: 40, top: 10),
-                child: const SmallText(text: 'Picture')),
-            Padding(
-              padding: const EdgeInsets.only(left: 40, top: 10),
-              child: Container(
-                color: const Color(0xff383d4d),
-                height: size.height * 0.27,
-                width: size.width * 0.7,
-                // child: Image.file(
-                //   file!,
-                //   fit: BoxFit.cover,
-                // ),
+            Center(
+              child: Text(
+                message,
+                //textAlign: TextAlign.justify,
+                style: GoogleFonts.poiretOne(
+                  textStyle: TextStyle(
+                      color: ConstColors.kTextSecColor,
+                      fontSize: MediaQuery.of(context).size.width * 0.04,
+                      fontWeight: FontWeight.w700),
+                ),
               ),
-            ),*/
-            SingleRow(label: 'Vehicle Number',val: mdl.vehicleNumber,),
-            SingleRow(label: 'Maker',val: mdl.maker,),
-            SingleRow(label: 'Manufacture Year',val: mdl.manufactureYear,),
-            SingleRow(label: 'Model',val: mdl.model,),
-            SingleRow(label: 'Engine Number',val: mdl.engineNumber,),
-            SingleRow(label: 'VIN',val:  mdl.vin,),
-
-            SizedBox(height: 5.h,),
+            ),
+            SizedBox(height: 7.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 DefaultButton(
-                  ww: 30.w,
-                    onTap: () {
-                      Provider.of<MainProvider>(context, listen: false)
-                          .addVehicle(mdl);
-
-                      Navigator.of(context).pop();
-                      showDialog(context: context, builder: (_){return QrCodeDialogBox(qr: mdl.id,);});
-                    },
-                    txt: 'Save'),
-                DefaultButton(
-                  ww: 30.w,
-                    onTap: () => Navigator.of(context).pop(), txt: 'Cancel'),
+                    onTap: pressed,
+                    txt: 'OK'),
 
               ],
             ),

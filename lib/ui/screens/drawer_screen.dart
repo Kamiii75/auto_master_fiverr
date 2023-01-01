@@ -1,48 +1,87 @@
 import 'package:auto_master_fiverr/core/constants/const_styles.dart';
-import 'package:auto_master_fiverr/ui/screens/add_vehicle_service.dart';
 import 'package:auto_master_fiverr/ui/screens/admin_screen.dart';
 import 'package:auto_master_fiverr/ui/screens/change_password.dart';
+import 'package:auto_master_fiverr/ui/screens/show_all_vehicles.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'add_vehicle.dart';
+import '../../core/blocs/bloc_export.dart';
+
 class DrawerScreen extends StatelessWidget {
   const DrawerScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding:  EdgeInsets.only(top: 6.5.h),
-        child: Drawer(
-          backgroundColor: Colors.white,
-child: Column(mainAxisAlignment: MainAxisAlignment.start,children: [
-  DrawerHeader(child: Image.asset('assets/images/logo.jpeg')),
-  SizedBox(height: 30.h,),
+    return BlocBuilder<SystemBloc, SystemState>(
+      builder: (context, state) {
+        return SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(top: 6.5.h),
+            child: Drawer(
+              backgroundColor: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  DrawerHeader(child: Image.asset('assets/images/logo.jpeg')),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  ListTile(
+                    onTap: () =>
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AdminScreen())),
+                    title: Text(
+                      'Admin',
+                      style: ConstStyles.kBoldTextStyle,
+                    ),
+                    leading: const Icon(Icons.account_circle,color: Colors.black,),
+                  ),
+                 state.isAdmin? ListTile(
+                    onTap: () =>
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChangePassword())),
+                    title: Text(
+                      'Change Password',
+                      style: ConstStyles.kBoldTextStyle,
+                    ),
+                   leading: const Icon(Icons.lock,color: Colors.black,),
 
-  ListTile(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminScreen())),
-        title: Text('Admin',style: ConstStyles.kBoldTextStyle,),
-  ),
-  ListTile(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const ChangePassword())),
-        title: Text('Change Password',style: ConstStyles.kBoldTextStyle,),
-  ),
+                 ):Container(),
+                  state.isAdmin?  ListTile(
+                    onTap: () =>
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ShowAllScreens())),
+                    title: Text(
+                      'All Vehicles',
+                      style: ConstStyles.kBoldTextStyle,
+                    ),
+                    leading: const Icon(Icons.car_crash_sharp,color: Colors.black,),
 
-  ListTile(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddVehicle())),
-        title: Text('Add Vehicles',style: ConstStyles.kBoldTextStyle,),
-  ),
-  ListTile(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddVehicleService())),
-        title: Text('Add Vehicles Services',style: ConstStyles.kBoldTextStyle,),
-  ),
-  ListTile(
-        title: Text('All Vehicles',style: ConstStyles.kBoldTextStyle,),
-  ),
-  ListTile(
-        title: Text('Logout',style: ConstStyles.kBoldTextStyle,),
-  ),
+                  ):Container(),
+                  state.isAdmin?  ListTile(
+                    onTap: ()=>BlocProvider.of<SystemBloc>(context)
+                        .add(const ChangeAdmin(admin: false)),
+                    title: Text(
 
-],),
-        ),
-      ),
+
+                      'Logout',
+                      style: ConstStyles.kBoldTextStyle,
+                    ),
+                    leading: const Icon(Icons.logout,color: Colors.black,),
+
+                  ):Container(),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

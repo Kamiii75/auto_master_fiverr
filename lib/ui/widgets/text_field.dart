@@ -1,6 +1,8 @@
 
+import 'package:auto_master_fiverr/core/constants/const_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../core/constants/const_colors.dart';
 import '../../core/constants/const_text.dart';
@@ -50,46 +52,54 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
           keyboardType: widget.textInputType,
           onChanged: widget.onChange,
           onSaved: widget.onSave,
-          inputFormatters: widget.type == 'name'
-              ? [
-                  FilteringTextInputFormatter.allow(RegExp("[a-zA-Z_ ]")),
-                ]
-              : [],
-          validator: widget.type == 'email'
-              ? (val) {
-                  return ConstText.emailValid.hasMatch(widget.controller.text)
-                      ? null
-                      : 'Your Email is Invalid';
-                }
-              : widget.type == 'password'
-                  ? (val) {
-                      return widget.controller.text.length >= 6
-                          ? null
-                          : 'Password must be at least 6 characters';
-                    }
-                  : widget.type == 'name'
-                      ? (val) {
-                          return ConstText.nameValid.hasMatch(widget.controller.text)
-                              ? widget.controller.text.length>32
-                              ?'Name can’t be longer than 32 characters'
-                              :null
-                              : 'Enter valid Name';
-                        }
-                      : widget.type == 'subject'
-                          ? (val) {
-                              return ConstText.nameValid.hasMatch(widget.controller.text)
-                                  ? null
-                                  : "Subject can't be empty";
-                            }
-                          : widget.type == 'message'
-                              ? (val) {
-                                  return ConstText.nameValid
-                                          .hasMatch(widget.controller.text)
-                                      ? null
-                                      : "The minimum lengeth for this field is 5 characters.\n"
-                                          "The maximum character limit is 250. ";
-                                }
-                              : null,
+
+          style: ConstStyles.kLabelTextStyle.copyWith(color: ConstColors.kTextColor,fontSize: 18.sp),
+          // inputFormatters: widget.type == 'name'
+          //     ? [
+          //         FilteringTextInputFormatter.allow(RegExp("[a-zA-Z_ ]")),
+          //       ]
+          //     : [],
+          // validator: widget.type == 'email'
+          //     ? (val) {
+          //         return ConstText.emailValid.hasMatch(widget.controller.text)
+          //             ? null
+          //             : 'Your Email is Invalid';
+          //       }
+          //     : widget.type == 'number'
+          //         ? (val) {
+          //             return widget.controller.text.isNotEmpty
+          //                 ? null
+          //                 : 'Password must be at least 6 characters';
+          //           }
+          //     : widget.type == 'password'
+          //         ? (val) {
+          //             return widget.controller.text.length >= 6
+          //                 ? null
+          //                 : 'Password must be at least 6 characters';
+          //           }
+          //         : widget.type == 'name'
+          //             ? (val) {
+          //                 return ConstText.nameValid.hasMatch(widget.controller.text)
+          //                     ? widget.controller.text.length>32
+          //                     ?'Name can’t be longer than 32 characters'
+          //                     :null
+          //                     : 'Enter valid Name';
+          //               }
+          //             : widget.type == 'subject'
+          //                 ? (val) {
+          //                     return ConstText.nameValid.hasMatch(widget.controller.text)
+          //                         ? null
+          //                         : "Subject can't be empty";
+          //                   }
+          //                 : widget.type == 'message'
+          //                     ? (val) {
+          //                         return ConstText.nameValid
+          //                                 .hasMatch(widget.controller.text)
+          //                             ? null
+          //                             : "The minimum lengeth for this field is 5 characters.\n"
+          //                                 "The maximum character limit is 250. ";
+          //                       }
+          //                     : null,
           decoration: InputDecoration(
             suffixIcon: widget.isPass
                 ? GestureDetector(
@@ -103,11 +113,13 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
                         : const Icon(Icons.visibility_outlined),
                   )
                 : null,
-            fillColor: ConstColors.kPrimaryColor.withOpacity(.1),
+            fillColor: ConstColors.kPrimaryColor.withOpacity(.05),
             filled: true,
             labelText: widget.label,
-            labelStyle: TextStyle(color: ConstColors.kPrimaryColor),
+            labelStyle: ConstStyles.kLabelTextStyle,
             hintText: widget.hint,
+            hintStyle: ConstStyles.kLabelTextStyle.copyWith(color: ConstColors.kTextColor),
+
             floatingLabelBehavior: FloatingLabelBehavior.auto,
           ),
         ),

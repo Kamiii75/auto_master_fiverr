@@ -51,7 +51,7 @@ class AddVehicle extends StatelessWidget {
                       controller: provider.vehicleNumberController,
                       label: 'Vehicle Number',
                       textInputType:
-                      TextInputType.emailAddress),
+                      TextInputType.number),
                   SizedBox(height: 3.h),
                   DefaultTextField(
                       type: 'name',
@@ -67,7 +67,7 @@ class AddVehicle extends StatelessWidget {
                       controller: provider.makerController,
                       label: 'Maker',
                       textInputType:
-                      TextInputType.emailAddress),
+                      TextInputType.name),
                   SizedBox(height: 3.h),
                   DefaultTextField(
                       type: 'name',
@@ -83,7 +83,7 @@ class AddVehicle extends StatelessWidget {
                       controller: provider.manufactureYearController,
                       label: 'Manufacture Year',
                       textInputType:
-                      TextInputType.emailAddress),
+                      TextInputType.datetime),
                   SizedBox(height: 3.h),
                   DefaultTextField(
                       type: 'name',
@@ -99,7 +99,7 @@ class AddVehicle extends StatelessWidget {
                       controller: provider.modelController,
                       label: 'Model',
                       textInputType:
-                      TextInputType.emailAddress),
+                      TextInputType.number),
                   SizedBox(height: 3.h),
                   DefaultTextField(
                       type: 'name',
@@ -115,7 +115,7 @@ class AddVehicle extends StatelessWidget {
                       controller: provider.engineController,
                       label: 'Engine Number',
                       textInputType:
-                      TextInputType.emailAddress),
+                      TextInputType.text),
                   SizedBox(height: 3.h),
                   DefaultTextField(
                       type: 'name',
@@ -128,10 +128,10 @@ class AddVehicle extends StatelessWidget {
                       //       emailController.text;
                       // },
                       hint: 'VIN',
-                      controller: provider.adminUserNameController,
+                      controller: provider.vinValueController,
                       label: 'VIN',
                       textInputType:
-                      TextInputType.emailAddress),
+                      TextInputType.text),
                   SizedBox(height: 3.h),
                   DefaultButton(onTap: () => provider.validateAddCar(context), txt: 'Save',)
                 ],),

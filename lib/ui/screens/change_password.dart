@@ -27,84 +27,86 @@ class ChangePassword extends StatelessWidget {
           centerTitle: true,
           title: Text('Admin Change Password', style: ConstStyles.kTitleStyle,),
         ), body:
-        Form(
-          child: Padding(
-            padding:  EdgeInsets.all(3.h),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Center(child: Image.asset('assets/images/logo.jpeg',height: 20.h,width: 150.w,),),
+        SingleChildScrollView(
+          child: Form(
+            child: Padding(
+              padding:  EdgeInsets.all(3.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Center(child: Image.asset('assets/images/logo.jpeg',height: 20.h,width: 150.w,),),
 
-                SizedBox(height: 15.h),
-                DefaultTextField(
-                    type: 'name',
-                    // onChange: (val) {
-                    //   model.appUser.email =
-                    //       emailController.text;
-                    // },
-                    // onSave: (val) {
-                    //   model.appUser.email =
-                    //       emailController.text;
-                    // },
-                    hint: 'Enter your Username',
-                    controller: provider.adminUserNameController,
-                    label: 'Username',
-                    textInputType:
-                    TextInputType.emailAddress),
-                SizedBox(height: 3.h),
-                DefaultTextField(
-                    type: 'password',
-                    // onChange: (val) {
-                    //   model.appUser.password =
-                    //       passwordController.text;
-                    // },
-                    // onSave: (val) {
-                    //   model.appUser.password =
-                    //       passwordController.text;
-                    // },
-                    hint: 'Enter your Old Password',
-                    isPass: true,
-                    controller: provider.adminPasswordController,
-                    label: 'OLd Password',
-                    textInputType: TextInputType.name),
+                  SizedBox(height: 15.h),
+                  DefaultTextField(
+                      type: 'name',
+                      // onChange: (val) {
+                      //   model.appUser.email =
+                      //       emailController.text;
+                      // },
+                      // onSave: (val) {
+                      //   model.appUser.email =
+                      //       emailController.text;
+                      // },
+                      hint: 'Enter your Username',
+                      controller: provider.adminUserNameChangeController,
+                      label: 'Username',
+                      textInputType:
+                      TextInputType.emailAddress),
+                  SizedBox(height: 3.h),
+                  DefaultTextField(
+                      type: 'password',
+                      // onChange: (val) {
+                      //   model.appUser.password =
+                      //       passwordController.text;
+                      // },
+                      // onSave: (val) {
+                      //   model.appUser.password =
+                      //       passwordController.text;
+                      // },
+                      hint: 'Enter your Old Password',
+                      isPass: true,
+                      controller: provider.adminOldPasswordChangeController,
+                      label: 'OLd Password',
+                      textInputType: TextInputType.name),
 
-                SizedBox(height: 3.h),
-                DefaultTextField(
-                    type: 'password',
-                    // onChange: (val) {
-                    //   model.appUser.password =
-                    //       passwordController.text;
-                    // },
-                    // onSave: (val) {
-                    //   model.appUser.password =
-                    //       passwordController.text;
-                    // },
-                    hint: 'Enter your New Password',
-                    isPass: true,
-                    controller: provider.adminPasswordController,
-                    label: 'New Password',
-                    textInputType: TextInputType.name),
+                  SizedBox(height: 3.h),
+                  DefaultTextField(
+                      type: 'password',
+                      // onChange: (val) {
+                      //   model.appUser.password =
+                      //       passwordController.text;
+                      // },
+                      // onSave: (val) {
+                      //   model.appUser.password =
+                      //       passwordController.text;
+                      // },
+                      hint: 'Enter your New Password',
+                      isPass: true,
+                      controller: provider.adminPasswordChangeController,
+                      label: 'New Password',
+                      textInputType: TextInputType.name),
 
-                SizedBox(height: 3.h),
-                DefaultTextField(
-                    type: 'password',
-                    // onChange: (val) {
-                    //   model.appUser.password =
-                    //       passwordController.text;
-                    // },
-                    // onSave: (val) {
-                    //   model.appUser.password =
-                    //       passwordController.text;
-                    // },
-                    hint: 'Confirm your Password',
-                    isPass: true,
-                    controller: provider.adminPasswordController,
-                    label: 'Confirm Password',
-                    textInputType: TextInputType.name),
+                  SizedBox(height: 3.h),
+                  DefaultTextField(
+                      type: 'password',
+                      // onChange: (val) {
+                      //   model.appUser.password =
+                      //       passwordController.text;
+                      // },
+                      // onSave: (val) {
+                      //   model.appUser.password =
+                      //       passwordController.text;
+                      // },
+                      hint: 'Confirm your Password',
+                      isPass: true,
+                      controller: provider.adminPasswordChangeConfirmController,
+                      label: 'Confirm Password',
+                      textInputType: TextInputType.name),
 
-                SizedBox(height: 3.h),
-                DefaultButton(onTap: () {  }, txt: 'Submit',)
-              ],),
+                  SizedBox(height: 3.h),
+                  DefaultButton(onTap: ()=>provider.changeAdmin(context), txt: 'Submit',)
+                ],),
+            ),
           ),
         )
           ,);

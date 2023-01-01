@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:equatable/equatable.dart';
+
+List<ModelVehicle> vehicleModelFromJson(String str) => List<ModelVehicle>.from(json.decode(str).map((x) => ModelVehicle.fromMap(x)));
 
 class ModelVehicle extends Equatable {
 final String id;
@@ -7,7 +11,7 @@ final String maker;
 final String manufactureYear;
 final String model;
 final String engineNumber;
-final String vinValue;
+final String vin;
 
 const ModelVehicle(
     {required this.id,
@@ -16,7 +20,7 @@ const ModelVehicle(
       required this.manufactureYear,
       required this.model,
       required this.engineNumber,
-      required this.vinValue,
+      required this.vin,
     });
 
 ModelVehicle copyWith(
@@ -26,7 +30,7 @@ ModelVehicle copyWith(
       String? manufactureYear,
       String? model,
       String? engineNumber,
-      String? vinValue,
+      String? vin,
 
     }) {
   return ModelVehicle(
@@ -36,7 +40,7 @@ ModelVehicle copyWith(
       manufactureYear: manufactureYear ?? this.manufactureYear,
     model: model ?? this.model,
     engineNumber: engineNumber ?? this.engineNumber,
-    vinValue: vinValue ?? this.vinValue,
+    vin: vin ?? this.vin,
 
   );
 }
@@ -49,7 +53,7 @@ Map<String, dynamic> toMap() {
     "manufactureYear": manufactureYear,
     "model": model,
     "engineNumber": engineNumber,
-    "vinValue": vinValue,
+    "vin": vin,
 
   };
 }
@@ -62,7 +66,7 @@ id: map["id"] ?? '',
   manufactureYear: map["manufactureYear"] ?? '',
   model: map["model"] ?? '',
   engineNumber: map["engineNumber"] ?? '',
-  vinValue: map["vinValue"] ?? '',
+  vin: map["vin"] ?? '',
 
 );
 }
@@ -76,7 +80,7 @@ List<Object?> get props => [
   manufactureYear,
   model,
   engineNumber,
-  vinValue,
+  vin,
 
 ];
 }

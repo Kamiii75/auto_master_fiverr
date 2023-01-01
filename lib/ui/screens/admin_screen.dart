@@ -27,50 +27,52 @@ class AdminScreen extends StatelessWidget {
           centerTitle: true,
           title: Text('Admin', style: ConstStyles.kTitleStyle,),
         ), body:
-        Form(
-          child: Padding(
-            padding:  EdgeInsets.all(3.h),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-              Center(child: Image.asset('assets/images/logo.jpeg'),),
+        SingleChildScrollView(
+          child: Form(
+            child: Padding(
+              padding:  EdgeInsets.all(3.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                Center(child: Image.asset('assets/images/logo.jpeg'),),
 
-                SizedBox(height: 15.h),
+                  SizedBox(height: 15.h),
+                  DefaultTextField(
+                    type: 'name',
+                    // onChange: (val) {
+                    //   model.appUser.email =
+                    //       emailController.text;
+                    // },
+                    // onSave: (val) {
+                    //   model.appUser.email =
+                    //       emailController.text;
+                    // },
+                    hint: 'Enter your Username',
+                    controller: provider.adminUserNameController,
+                    label: 'Username',
+                    textInputType:
+                    TextInputType.emailAddress),
+                  SizedBox(height: 3.h),
                 DefaultTextField(
-                  type: 'name',
-                  // onChange: (val) {
-                  //   model.appUser.email =
-                  //       emailController.text;
-                  // },
-                  // onSave: (val) {
-                  //   model.appUser.email =
-                  //       emailController.text;
-                  // },
-                  hint: 'Enter your Username',
-                  controller: provider.adminUserNameController,
-                  label: 'Username',
-                  textInputType:
-                  TextInputType.emailAddress),
-                SizedBox(height: 3.h),
-              DefaultTextField(
-                  type: 'password',
-                  // onChange: (val) {
-                  //   model.appUser.password =
-                  //       passwordController.text;
-                  // },
-                  // onSave: (val) {
-                  //   model.appUser.password =
-                  //       passwordController.text;
-                  // },
-                  hint: 'Enter your Password',
-                  isPass: true,
-                  controller: provider.adminPasswordController,
-                  label: 'Password',
-                  textInputType: TextInputType.name),
+                    type: 'password',
+                    // onChange: (val) {
+                    //   model.appUser.password =
+                    //       passwordController.text;
+                    // },
+                    // onSave: (val) {
+                    //   model.appUser.password =
+                    //       passwordController.text;
+                    // },
+                    hint: 'Enter your Password',
+                    isPass: true,
+                    controller: provider.adminPasswordController,
+                    label: 'Password',
+                    textInputType: TextInputType.name),
 
-                SizedBox(height: 3.h),
-                DefaultButton(onTap: () {  }, txt: 'Login',)
-            ],),
+                  SizedBox(height: 3.h),
+                  DefaultButton(onTap: () =>provider.login(context), txt: 'Login',)
+              ],),
+            ),
           ),
         )
           ,);

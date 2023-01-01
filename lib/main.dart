@@ -2,6 +2,7 @@ import 'package:auto_master_fiverr/ui/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -45,12 +46,14 @@ class MyApp extends StatelessWidget {
             theme: theme(context),
             // home:const LoginScreen()
             home: const HomeScreen(),
-            builder: (context, child) {
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                child: child!,
-              );
-            },
+
+            builder: EasyLoading.init(),
+            // builder: (context, child) {
+            //   return MediaQuery(
+            //     data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            //     child: child!,
+            //   );
+            // },
           ),
         ),
       );

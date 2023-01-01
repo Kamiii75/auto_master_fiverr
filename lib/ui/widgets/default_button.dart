@@ -15,7 +15,7 @@ class DefaultButton extends StatelessWidget {
       required this.onTap,
       this.clr = 5,
       this.hh = 45,
-      this.ww = 100,
+      this.ww = 200,
       required this.txt})
       : super(key: key);
 

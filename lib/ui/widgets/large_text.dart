@@ -11,7 +11,7 @@ class LargeText extends StatelessWidget {
 
   const LargeText(
       {Key? key,
-      this.color = const Color(0xFF332d2b),
+      this.color = const Color(0xFFF3F3F3),
       required this.text,
       this.size = 0,
       this.overFlow = TextOverflow.ellipsis})
@@ -25,7 +25,7 @@ class LargeText extends StatelessWidget {
       overflow: overFlow,
       style: GoogleFonts.poiretOne(
         textStyle: TextStyle(
-            color: ConstColors.ktextColor,
+            color: color,
             fontSize: MediaQuery.of(context).size.width * 0.058,
             fontWeight: FontWeight.w700),
       ),

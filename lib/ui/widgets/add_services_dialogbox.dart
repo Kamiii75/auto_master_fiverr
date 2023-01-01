@@ -1,3 +1,4 @@
+import 'package:auto_master_fiverr/core/models/services_model.dart';
 import 'package:auto_master_fiverr/ui/widgets/qrcode_dialogbox.dart';
 import 'package:auto_master_fiverr/ui/widgets/small_text.dart';
 import 'package:flutter/material.dart';
@@ -8,15 +9,16 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../core/constants/const_colors.dart';
 import '../../core/models/vehicle_model.dart';
 import '../../core/providers/main_provider.dart';
+import '../screens/home_screen.dart';
 import 'build_single_row.dart';
 import 'default_button.dart';
 import 'large_text.dart';
 
 
-class AddCarDialogBox extends StatelessWidget {
-  final ModelVehicle mdl;
+class AddServiceDialogBox extends StatelessWidget {
+  final ModelService mdl;
 
-  const AddCarDialogBox({Key? key, required this.mdl}) : super(key: key);
+  const AddServiceDialogBox({Key? key, required this.mdl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class AddCarDialogBox extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   LargeText(
-                    text: 'Add Vehicle',
+                    text: 'Add Vehicle Service',
                   ),
                 ],
               ),
@@ -65,12 +67,10 @@ class AddCarDialogBox extends StatelessWidget {
                 // ),
               ),
             ),*/
-            SingleRow(label: 'Vehicle Number',val: mdl.vehicleNumber,),
-            SingleRow(label: 'Maker',val: mdl.maker,),
-            SingleRow(label: 'Manufacture Year',val: mdl.manufactureYear,),
-            SingleRow(label: 'Model',val: mdl.model,),
-            SingleRow(label: 'Engine Number',val: mdl.engineNumber,),
-            SingleRow(label: 'VIN',val:  mdl.vin,),
+            SingleRow(label: 'Date Visit',val: mdl.dateVisit,),
+            SingleRow(label: 'Mileage',val: mdl.mileage,),
+            SingleRow(label: 'Work Description',val: mdl.workDescription,),
+            SingleRow(label: 'Observations',val: mdl.observations,),
 
             SizedBox(height: 5.h,),
             Row(
@@ -80,14 +80,14 @@ class AddCarDialogBox extends StatelessWidget {
                   ww: 30.w,
                     onTap: () {
                       Provider.of<MainProvider>(context, listen: false)
-                          .addVehicle(mdl);
-
+                          .addVehicleService(context,mdl);
+                      FocusManager.instance.primaryFocus?.unfocus();
                       Navigator.of(context).pop();
-                      showDialog(context: context, builder: (_){return QrCodeDialogBox(qr: mdl.id,);});
+                      Navigator.of(context).pop();
                     },
                     txt: 'Save'),
                 DefaultButton(
-                  ww: 30.w,
+                    ww: 30.w,
                     onTap: () => Navigator.of(context).pop(), txt: 'Cancel'),
 
               ],
