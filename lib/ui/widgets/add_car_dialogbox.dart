@@ -1,6 +1,7 @@
 import 'package:auto_master_fiverr/ui/widgets/qrcode_dialogbox.dart';
 import 'package:auto_master_fiverr/ui/widgets/small_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -35,9 +36,9 @@ class AddCarDialogBox extends StatelessWidget {
               padding:  EdgeInsets.symmetric(vertical: 5.h,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   LargeText(
-                    text: 'Add Vehicle',
+                    text: 'addVehicle'.tr,
                   ),
                 ],
               ),
@@ -65,12 +66,12 @@ class AddCarDialogBox extends StatelessWidget {
                 // ),
               ),
             ),*/
-            SingleRow(label: 'Vehicle Number',val: mdl.vehicleNumber,),
-            SingleRow(label: 'Maker',val: mdl.maker,),
-            SingleRow(label: 'Manufacture Year',val: mdl.manufactureYear,),
-            SingleRow(label: 'Model',val: mdl.model,),
-            SingleRow(label: 'Engine Number',val: mdl.engineNumber,),
-            SingleRow(label: 'VIN',val:  mdl.vin,),
+            SingleRow(label: 'vehicleNumber'.tr,val: mdl.vehicleNumber,),
+            SingleRow(label: 'maker'.tr,val: mdl.maker,),
+            SingleRow(label: 'manufactureYear'.tr,val: mdl.manufactureYear,),
+            SingleRow(label: 'model'.tr,val: mdl.model,),
+            SingleRow(label: 'engineNumber'.tr,val: mdl.engineNumber,),
+            SingleRow(label: 'vin'.tr,val:  mdl.vin,),
 
             SizedBox(height: 5.h,),
             Row(
@@ -85,10 +86,10 @@ class AddCarDialogBox extends StatelessWidget {
                       Navigator.of(context).pop();
                       showDialog(context: context, builder: (_){return QrCodeDialogBox(qr: mdl.id,);});
                     },
-                    txt: 'Save'),
+                    txt: 'save'.tr),
                 DefaultButton(
                   ww: 30.w,
-                    onTap: () => Navigator.of(context).pop(), txt: 'Cancel'),
+                    onTap: () => Navigator.of(context).pop(), txt: 'cancel'.tr),
 
               ],
             ),

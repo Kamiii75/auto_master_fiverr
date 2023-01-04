@@ -3,12 +3,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'core/blocs/bloc_export.dart';
 import 'core/providers/main_provider.dart';
+import 'core/utils/localizatiion.dart';
 import 'core/utils/theme.dart';
 import 'firebase_options.dart';
 
@@ -40,8 +42,10 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider(create: (context) => MainProvider()),
           ],
-          child: MaterialApp(
-            title: 'auto master',
+          child: GetMaterialApp(
+            translations: LocalizationClass(),
+            locale: Locale("gr"),
+            title: 'appTitle'.tr,
             debugShowCheckedModeBanner: false,
             theme: theme(context),
             // home:const LoginScreen()

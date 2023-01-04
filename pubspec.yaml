@@ -53,6 +53,7 @@ dependencies:
   screenshot: ^1.2.3
   flutter_easyloading: ^3.0.5
   simple_barcode_scanner: ^0.0.5
+  get: ^4.6.5
 
 
 dev_dependencies:
@@ -65,7 +66,7 @@ flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/logo.jpeg"
-  min_sdk_android: 23 # android min sdk min:16, default 21
+  min_sdk_android: 23
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

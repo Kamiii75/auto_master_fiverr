@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kamiworks.auto_master_fiverr">
+
    <application
         android:label="auto_master_fiverr"
         android:name="${applicationName}"

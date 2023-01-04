@@ -1,5 +1,6 @@
 import 'package:auto_master_fiverr/ui/screens/show_vehicle_services.dart';
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -30,7 +31,7 @@ class ShowAllScreens extends StatelessWidget {
             ),
             centerTitle: true,
             title: Text(
-              'Show All Vehicles',
+              'showAllVehicles'.tr,
               style: ConstStyles.kTitleStyle,
             ),
             actions: [
@@ -79,32 +80,32 @@ class ShowAllScreens extends StatelessWidget {
                           children: [
                             SingleRow(
                               color: ConstColors.bgColor,
-                              label: 'Vehicle Number',
+                              label: 'vehicleNumber'.tr,
                               val: provider.listVehicles[index].vehicleNumber,
                             ),
                             SingleRow(
                               color: ConstColors.bgColor,
-                              label: 'Maker',
+                              label: 'maker'.tr,
                               val: provider.listVehicles[index].maker,
                             ),
                             SingleRow(
                               color: ConstColors.bgColor,
-                              label: 'Manufacture Year',
+                              label: 'manufactureYear'.tr,
                               val: provider.listVehicles[index].manufactureYear,
                             ),
                             SingleRow(
                               color: ConstColors.bgColor,
-                              label: 'Model',
+                              label: 'model'.tr,
                               val: provider.listVehicles[index].model,
                             ),
                             SingleRow(
                               color: ConstColors.bgColor,
-                              label: 'Engine Number',
+                              label: 'engineNumber'.tr,
                               val: provider.listVehicles[index].engineNumber,
                             ),
                             SingleRow(
                               color: ConstColors.bgColor,
-                              label: 'VIN',
+                              label: 'vin'.tr,
                               val: provider.listVehicles[index].vin,
                             ),
                           ],

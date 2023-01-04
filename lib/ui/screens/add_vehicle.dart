@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -25,7 +26,7 @@ class AddVehicle extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          title: Text('Add Vehicle', style: ConstStyles.kTitleStyle,),
+          title: Text('addVehicle'.tr, style: ConstStyles.kTitleStyle,),
         ), body:
         SingleChildScrollView(
           child: Form(
@@ -47,9 +48,9 @@ class AddVehicle extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Vehicle Number',
+                      hint: 'vehicleNumber'.tr,
                       controller: provider.vehicleNumberController,
-                      label: 'Vehicle Number',
+                      label: 'vehicleNumber'.tr,
                       textInputType:
                       TextInputType.number),
                   SizedBox(height: 3.h),
@@ -63,9 +64,9 @@ class AddVehicle extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Maker',
+                      hint: 'maker'.tr,
                       controller: provider.makerController,
-                      label: 'Maker',
+                      label: 'maker'.tr,
                       textInputType:
                       TextInputType.name),
                   SizedBox(height: 3.h),
@@ -79,9 +80,9 @@ class AddVehicle extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Manufacture Year',
+                      hint: 'manufactureYear'.tr,
                       controller: provider.manufactureYearController,
-                      label: 'Manufacture Year',
+                      label: 'manufactureYear'.tr,
                       textInputType:
                       TextInputType.datetime),
                   SizedBox(height: 3.h),
@@ -95,9 +96,9 @@ class AddVehicle extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Model',
+                      hint: 'model'.tr,
                       controller: provider.modelController,
-                      label: 'Model',
+                      label: 'model'.tr,
                       textInputType:
                       TextInputType.number),
                   SizedBox(height: 3.h),
@@ -111,9 +112,9 @@ class AddVehicle extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Engine Number',
+                      hint: 'engineNumber'.tr,
                       controller: provider.engineController,
-                      label: 'Engine Number',
+                      label: 'engineNumber'.tr,
                       textInputType:
                       TextInputType.text),
                   SizedBox(height: 3.h),
@@ -127,13 +128,13 @@ class AddVehicle extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'VIN',
+                      hint: 'vin'.tr,
                       controller: provider.vinValueController,
-                      label: 'VIN',
+                      label: 'vin'.tr,
                       textInputType:
                       TextInputType.text),
                   SizedBox(height: 3.h),
-                  DefaultButton(onTap: () => provider.validateAddCar(context), txt: 'Save',)
+                  DefaultButton(onTap: () => provider.validateAddCar(context), txt: 'save'.tr,)
                 ],),
             ),
           ),

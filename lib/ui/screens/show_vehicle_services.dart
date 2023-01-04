@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -30,13 +31,17 @@ class ShowVehicleServices extends StatelessWidget {
               ),
             ),
             actions: state.isAdmin? [
-              GestureDetector(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddVehicleService())),
+              Padding(
 
-                child: const Icon(Icons.add,color: Colors.white,),)
+                padding:  EdgeInsets.symmetric(horizontal:3.w),
+                child: GestureDetector(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddVehicleService())),
+
+                  child: const Icon(Icons.add,color: Colors.white,),),
+              )
             ]:[],
             centerTitle: true,
             title: Text(
-              'Vehicle Services',
+              'vehicleServices'.tr,
               style: ConstStyles.kTitleStyle,
             ),
           ),
@@ -62,32 +67,32 @@ class ShowVehicleServices extends StatelessWidget {
                           children: [
                             SingleRow(
                               color: ConstColors.kTextSecColor,
-                              label: 'Vehicle Number',
+                              label: 'vehicleNumber'.tr,
                               val: provider.singleVehicle.vehicleNumber??'',
                             ),
                             SingleRow(
                               color: ConstColors.kTextSecColor,
-                              label: 'Maker',
+                              label: 'maker'.tr,
                               val: provider.singleVehicle.maker??'',
                             ),
                             SingleRow(
                               color: ConstColors.kTextSecColor,
-                              label: 'Manufacture Year',
+                              label: 'manufactureYear'.tr,
                               val: provider.singleVehicle.manufactureYear??'',
                             ),
                             SingleRow(
                               color: ConstColors.kTextSecColor,
-                              label: 'Model',
+                              label: 'model'.tr,
                               val: provider.singleVehicle.model??'',
                             ),
                             SingleRow(
                               color: ConstColors.kTextSecColor,
-                              label: 'Engine Number',
+                              label: 'engineNumber'.tr,
                               val: provider.singleVehicle.engineNumber??'',
                             ),
                             SingleRow(
                               color: ConstColors.kTextSecColor,
-                              label: 'VIN',
+                              label: 'vin'.tr,
                               val: provider.singleVehicle.vin??'',
                             ),
                           ],
@@ -122,22 +127,22 @@ class ShowVehicleServices extends StatelessWidget {
                         children: [
                           SingleRow(
                             color: ConstColors.bgColor,
-                            label: 'Date Visit',
+                            label: 'dateVisit'.tr,
                             val: provider.listService[index].dateVisit,
                           ),
                           SingleRow(
                             color: ConstColors.bgColor,
-                            label: 'Mileage',
+                            label: 'mileage'.tr,
                             val: provider.listService[index].mileage,
                           ),
                           SingleRow(
                             color: ConstColors.bgColor,
-                            label: 'Work Description',
+                            label: 'workDescription'.tr,
                             val: provider.listService[index].workDescription,
                           ),
                           SingleRow(
                             color: ConstColors.bgColor,
-                            label: 'Observations',
+                            label: 'observations'.tr,
                             val: provider.listService[index].observations,
                           ),
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -25,7 +26,7 @@ class ChangePassword extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          title: Text('Admin Change Password', style: ConstStyles.kTitleStyle,),
+          title: Text('adminChangePassword'.tr, style: ConstStyles.kTitleStyle,),
         ), body:
         SingleChildScrollView(
           child: Form(
@@ -47,9 +48,9 @@ class ChangePassword extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Enter your Username',
+                      hint: 'enterUserName'.tr,
                       controller: provider.adminUserNameChangeController,
-                      label: 'Username',
+                      label: 'userName'.tr,
                       textInputType:
                       TextInputType.emailAddress),
                   SizedBox(height: 3.h),
@@ -63,10 +64,10 @@ class ChangePassword extends StatelessWidget {
                       //   model.appUser.password =
                       //       passwordController.text;
                       // },
-                      hint: 'Enter your Old Password',
+                      hint: 'oldPasswordTxt'.tr,
                       isPass: true,
                       controller: provider.adminOldPasswordChangeController,
-                      label: 'OLd Password',
+                      label: 'oldPassword'.tr,
                       textInputType: TextInputType.name),
 
                   SizedBox(height: 3.h),
@@ -80,10 +81,10 @@ class ChangePassword extends StatelessWidget {
                       //   model.appUser.password =
                       //       passwordController.text;
                       // },
-                      hint: 'Enter your New Password',
+                      hint: 'newPasswordTxt'.tr,
                       isPass: true,
                       controller: provider.adminPasswordChangeController,
-                      label: 'New Password',
+                      label: 'newPassword'.tr,
                       textInputType: TextInputType.name),
 
                   SizedBox(height: 3.h),
@@ -97,14 +98,14 @@ class ChangePassword extends StatelessWidget {
                       //   model.appUser.password =
                       //       passwordController.text;
                       // },
-                      hint: 'Confirm your Password',
+                      hint: 'confirmPasswordTxt'.tr,
                       isPass: true,
                       controller: provider.adminPasswordChangeConfirmController,
-                      label: 'Confirm Password',
+                      label: 'confirmPassword'.tr,
                       textInputType: TextInputType.name),
 
                   SizedBox(height: 3.h),
-                  DefaultButton(onTap: ()=>provider.changeAdmin(context), txt: 'Submit',)
+                  DefaultButton(onTap: ()=>provider.changeAdmin(context), txt: 'submit'.tr,)
                 ],),
             ),
           ),

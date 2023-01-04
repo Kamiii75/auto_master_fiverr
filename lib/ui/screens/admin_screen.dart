@@ -1,5 +1,6 @@
 import 'package:auto_master_fiverr/ui/widgets/default_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -25,7 +26,7 @@ class AdminScreen extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          title: Text('Admin', style: ConstStyles.kTitleStyle,),
+          title: Text('admin'.tr, style: ConstStyles.kTitleStyle,),
         ), body:
         SingleChildScrollView(
           child: Form(
@@ -47,9 +48,9 @@ class AdminScreen extends StatelessWidget {
                     //   model.appUser.email =
                     //       emailController.text;
                     // },
-                    hint: 'Enter your Username',
+                    hint: 'enterUserName'.tr,
                     controller: provider.adminUserNameController,
-                    label: 'Username',
+                    label: 'userName'.tr,
                     textInputType:
                     TextInputType.emailAddress),
                   SizedBox(height: 3.h),
@@ -63,14 +64,14 @@ class AdminScreen extends StatelessWidget {
                     //   model.appUser.password =
                     //       passwordController.text;
                     // },
-                    hint: 'Enter your Password',
+                    hint: 'enterUserPass'.tr,
                     isPass: true,
                     controller: provider.adminPasswordController,
-                    label: 'Password',
+                    label: 'userPass'.tr,
                     textInputType: TextInputType.name),
 
                   SizedBox(height: 3.h),
-                  DefaultButton(onTap: () =>provider.login(context), txt: 'Login',)
+                  DefaultButton(onTap: () =>provider.login(context), txt: 'login'.tr,)
               ],),
             ),
           ),

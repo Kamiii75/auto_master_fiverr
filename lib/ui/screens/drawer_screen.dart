@@ -3,6 +3,7 @@ import 'package:auto_master_fiverr/ui/screens/admin_screen.dart';
 import 'package:auto_master_fiverr/ui/screens/change_password.dart';
 import 'package:auto_master_fiverr/ui/screens/show_all_vehicles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../core/blocs/bloc_export.dart';
@@ -33,7 +34,7 @@ class DrawerScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => const AdminScreen())),
                     title: Text(
-                      'Admin',
+                      'admin'.tr,
                       style: ConstStyles.kBoldTextStyle,
                     ),
                     leading: const Icon(Icons.account_circle,color: Colors.black,),
@@ -45,7 +46,7 @@ class DrawerScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => const ChangePassword())),
                     title: Text(
-                      'Change Password',
+                      'changePassword'.tr,
                       style: ConstStyles.kBoldTextStyle,
                     ),
                    leading: const Icon(Icons.lock,color: Colors.black,),
@@ -58,7 +59,7 @@ class DrawerScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => const ShowAllScreens())),
                     title: Text(
-                      'All Vehicles',
+                      'allVehicles'.tr,
                       style: ConstStyles.kBoldTextStyle,
                     ),
                     leading: const Icon(Icons.car_crash_sharp,color: Colors.black,),
@@ -70,7 +71,7 @@ class DrawerScreen extends StatelessWidget {
                     title: Text(
 
 
-                      'Logout',
+                      'logout'.tr,
                       style: ConstStyles.kBoldTextStyle,
                     ),
                     leading: const Icon(Icons.logout,color: Colors.black,),

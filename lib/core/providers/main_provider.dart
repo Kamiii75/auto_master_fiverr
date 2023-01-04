@@ -2,6 +2,7 @@ import 'package:auto_master_fiverr/core/models/services_model.dart';
 import 'package:auto_master_fiverr/ui/widgets/add_services_dialogbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
 import '../../ui/widgets/add_car_dialogbox.dart';
 import '../../ui/widgets/custom_dialogbox.dart';
@@ -53,8 +54,8 @@ class MainProvider extends ChangeNotifier {
           BlocProvider.of<SystemBloc>(context)
               .add( ChangeAdmin(admin: isAdmin));
           return CustomDialogBox(
-            title: isAdmin?'Login Success':'Login Failed',
-            message: isAdmin?'Admin Successfully Logged In':'Something went wrong',
+            title: isAdmin?'loginSuccess'.tr:'loginFailed'.tr,
+            message: isAdmin?'loginSuccessTxt'.tr:'loginFailedTxt'.tr,
             pressed: isAdmin?() {
               _adminUserNameController.clear();
               _adminPasswordController.clear();
@@ -89,8 +90,8 @@ class MainProvider extends ChangeNotifier {
                 context: context,
                 builder: (context) {
                   return CustomDialogBox(
-                    title: 'Warning',
-                    message: 'Please enter same password',
+                    title: 'warning'.tr,
+                    message: 'confirmPasswordInvalidTxt'.tr,
                     pressed: () {
                       Navigator.of(context).pop();
                     },
@@ -103,8 +104,8 @@ class MainProvider extends ChangeNotifier {
               context: context,
               builder: (context) {
                 return CustomDialogBox(
-                  title: 'Warning',
-                  message: 'Confirm Password must not be Empty',
+                  title: 'warning'.tr,
+                  message: 'confirmNotEmpty'.tr,
                   pressed: () {
                     Navigator.of(context).pop();
                   },
@@ -118,8 +119,8 @@ class MainProvider extends ChangeNotifier {
             builder: (context) {
               return CustomDialogBox(
 
-                title: 'Warning',
-                message: 'Password must not be Empty',
+                title: 'warning'.tr,
+                message: 'passNotEmpty'.tr,
                 pressed: () {
                   Navigator.of(context).pop();
                 },
@@ -133,8 +134,8 @@ class MainProvider extends ChangeNotifier {
 
               return CustomDialogBox(
 
-                title: 'Warning',
-                message: 'Old password is invalid',
+                title: 'warning'.tr,
+                message: 'oldPasswordInvalidTxt'.tr,
                 pressed: () {
                   Navigator.of(context).pop();
                 },
@@ -149,8 +150,8 @@ class MainProvider extends ChangeNotifier {
 
             return CustomDialogBox(
 
-              title: 'Warning',
-              message: 'Username must not be Empty',
+              title: 'warning'.tr,
+              message: 'usernameNotEmpty'.tr,
               pressed: () {
                 Navigator.of(context).pop();
               },
@@ -470,4 +471,7 @@ class MainProvider extends ChangeNotifier {
     notifyListeners();
   }
 ///////////// List Services ///////////////////////////
+
+
+
 }

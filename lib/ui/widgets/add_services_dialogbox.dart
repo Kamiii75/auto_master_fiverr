@@ -2,6 +2,7 @@ import 'package:auto_master_fiverr/core/models/services_model.dart';
 import 'package:auto_master_fiverr/ui/widgets/qrcode_dialogbox.dart';
 import 'package:auto_master_fiverr/ui/widgets/small_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -37,9 +38,9 @@ class AddServiceDialogBox extends StatelessWidget {
               padding:  EdgeInsets.symmetric(vertical: 5.h,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   LargeText(
-                    text: 'Add Vehicle Service',
+                    text: 'addService'.tr,
                   ),
                 ],
               ),
@@ -67,10 +68,10 @@ class AddServiceDialogBox extends StatelessWidget {
                 // ),
               ),
             ),*/
-            SingleRow(label: 'Date Visit',val: mdl.dateVisit,),
-            SingleRow(label: 'Mileage',val: mdl.mileage,),
-            SingleRow(label: 'Work Description',val: mdl.workDescription,),
-            SingleRow(label: 'Observations',val: mdl.observations,),
+            SingleRow(label: 'dateVisit'.tr,val: mdl.dateVisit,),
+            SingleRow(label: 'mileage'.tr,val: mdl.mileage,),
+            SingleRow(label: 'workDescription'.tr,val: mdl.workDescription,),
+            SingleRow(label: 'observations'.tr,val: mdl.observations,),
 
             SizedBox(height: 5.h,),
             Row(
@@ -85,10 +86,10 @@ class AddServiceDialogBox extends StatelessWidget {
                       Navigator.of(context).pop();
                       Navigator.of(context).pop();
                     },
-                    txt: 'Save'),
+                    txt: 'save'.tr),
                 DefaultButton(
                     ww: 30.w,
-                    onTap: () => Navigator.of(context).pop(), txt: 'Cancel'),
+                    onTap: () => Navigator.of(context).pop(), txt: 'cancel'.tr),
 
               ],
             ),

@@ -1,6 +1,7 @@
 import 'package:auto_master_fiverr/ui/widgets/qrcode_dialogbox.dart';
 import 'package:auto_master_fiverr/ui/widgets/small_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -52,15 +53,19 @@ class CustomDialogBox extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5.h,),
-            Center(
-              child: Text(
-                message,
-                //textAlign: TextAlign.justify,
-                style: GoogleFonts.poiretOne(
-                  textStyle: TextStyle(
-                      color: ConstColors.kTextSecColor,
-                      fontSize: MediaQuery.of(context).size.width * 0.04,
-                      fontWeight: FontWeight.w700),
+            Padding(
+
+              padding: EdgeInsets.symmetric(horizontal: 5.w,),
+              child: Center(
+                child: Text(
+                  message,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poiretOne(
+                    textStyle: TextStyle(
+                        color: ConstColors.kTextSecColor,
+                        fontSize: MediaQuery.of(context).size.width * 0.04,
+                        fontWeight: FontWeight.w700),
+                  ),
                 ),
               ),
             ),
@@ -70,7 +75,7 @@ class CustomDialogBox extends StatelessWidget {
               children: [
                 DefaultButton(
                     onTap: pressed,
-                    txt: 'OK'),
+                    txt: 'ok'.tr),
 
               ],
             ),

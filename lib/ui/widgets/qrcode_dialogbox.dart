@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -30,9 +31,9 @@ class QrCodeDialogBox extends StatelessWidget {
               padding:  EdgeInsets.symmetric(vertical: 5.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   LargeText(
-                    text: 'Qr Code',
+                    text: 'qrCode'.tr,
                     color: Colors.white,
                   ),
                 ],
@@ -61,17 +62,17 @@ class QrCodeDialogBox extends StatelessWidget {
                   ww: 30.w,
                   onTap: () =>  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
                       const HomeScreen()), (Route<dynamic> route) => false),
-                  txt: 'OK',
+                  txt: 'ok'.tr,
                 ),
-                DefaultButton(
-                  ww: 30.w,
-                  onTap: () {
-
-                    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-                    const HomeScreen()), (Route<dynamic> route) => false);
-                  },
-                  txt: 'Share',
-                ),
+                // DefaultButton(
+                //   ww: 30.w,
+                //   onTap: () {
+                //
+                //     Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
+                //     const HomeScreen()), (Route<dynamic> route) => false);
+                //   },
+                //   txt: 'share'.tr,
+                // ),
               ],
             ),
           ],

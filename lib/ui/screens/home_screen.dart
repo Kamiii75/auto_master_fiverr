@@ -7,6 +7,7 @@ import 'package:auto_master_fiverr/ui/screens/show_vehicle_services.dart';
 import 'package:auto_master_fiverr/ui/widgets/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -90,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             centerTitle: true,
             title: Text(
-              'Auto Master',
+              'appTitle'.tr,
               style: ConstStyles.kTitleStyle,
             ),
           ),
@@ -153,8 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context) {
 
                               return CustomDialogBox(
-                                title: 'Scanning Failed',
-                                message:'QrCode have error please scan valid QrCode',
+                                title: 'scanningFailed'.tr,
+                                message:'scanningFailedTxt'.tr,
                                 pressed: () {
                                   Navigator.of(context).pop();
                                 },
@@ -168,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
                   },
-                  txt: 'Scan',
+                  txt: 'scan'.tr,
                 ),
               )
             ],

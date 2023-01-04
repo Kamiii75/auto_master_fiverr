@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -25,7 +26,7 @@ class AddVehicleService extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          title: Text('Add Service', style: ConstStyles.kTitleStyle,),
+          title: Text('addService'.tr, style: ConstStyles.kTitleStyle,),
         ), body:
         SingleChildScrollView(
           child: Form(
@@ -47,9 +48,9 @@ class AddVehicleService extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Date Visit',
+                      hint: 'dateVisit'.tr,
                       controller: provider.dateVisitController,
-                      label: 'Date Visit',
+                      label: 'dateVisit'.tr,
                       textInputType:
                       TextInputType.datetime),
                   SizedBox(height: 3.h),
@@ -63,9 +64,9 @@ class AddVehicleService extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Mileage',
+                      hint: 'mileage'.tr,
                       controller: provider.mileageController,
-                      label: 'Mileage',
+                      label: 'mileage'.tr,
                       textInputType:
                       TextInputType.number),
                   SizedBox(height: 3.h),
@@ -79,9 +80,9 @@ class AddVehicleService extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Work Description',
+                      hint: 'workDescription'.tr,
                       controller: provider.workDescriptionController,
-                      label: 'Work Description',
+                      label: 'workDescription'.tr,
                       textInputType:
                       TextInputType.text),
                   SizedBox(height: 3.h),
@@ -95,13 +96,13 @@ class AddVehicleService extends StatelessWidget {
                       //   model.appUser.email =
                       //       emailController.text;
                       // },
-                      hint: 'Observations',
+                      hint: 'observations'.tr,
                       controller: provider.observationsController,
-                      label: 'Observations',
+                      label: 'observations'.tr,
                       textInputType:
                       TextInputType.text),
                   SizedBox(height: 3.h),
-                  DefaultButton(onTap: () => provider.validateCarServices(context), txt: 'Save',)
+                  DefaultButton(onTap: () => provider.validateCarServices(context), txt: 'save'.tr,)
                 ],),
             ),
           ),
