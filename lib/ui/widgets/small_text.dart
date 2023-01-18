@@ -1,3 +1,4 @@
+import 'package:auto_master_fiverr/core/constants/const_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,12 +22,9 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       //textAlign: TextAlign.justify,
-      style: GoogleFonts.poiretOne(
-        textStyle: TextStyle(
-            color: color,
-            fontSize: MediaQuery.of(context).size.width * 0.032,
-            fontWeight: FontWeight.w700),
-      ),
+      style: ConstStyles.kNormalTextStyle.copyWith(color: color)
+
+
     );
   }
 }

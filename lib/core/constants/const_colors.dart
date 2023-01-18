@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ConstColors{
   static Color kPrimaryColor=const Color(0xffe25d37);
@@ -24,4 +27,39 @@ class ConstColors{
     colors:  <Color>[Color(0xffeb883f), Color(0xffe25d37)],
     stops:  <double>[0, 0.648],) ;
 
+
+  static  BoxDecoration mainDecoration=BoxDecoration(
+      gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.white,
+            Colors.white,
+            Colors.white,
+            Colors.white,
+            Colors.white,
+            Colors.white,
+            Colors.white,
+            Colors.grey.shade100,
+            Colors.blueGrey.shade100,
+            Colors.grey.shade100,
+            Colors.white,
+          ]
+      )
+  ) ;
+
+
+  static NeumorphicStyle neumorphicStyle =NeumorphicStyle(
+
+    surfaceIntensity: 55,
+  shadowDarkColor: Colors.blueGrey,
+  shadowLightColor: Colors.grey.shade100,
+  shadowDarkColorEmboss: Colors.blueGrey,
+  shadowLightColorEmboss: Colors.grey.shade100,
+  shape: NeumorphicShape.convex,
+  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(5.w)),
+  depth: 8,
+  lightSource: LightSource.topLeft,
+  color: ConstColors.btnColor.withOpacity(.5)
+  );
 }

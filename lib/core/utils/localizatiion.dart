@@ -63,6 +63,11 @@ class LocalizationClass extends Translations {
       "passNotEmpty":"Password must not be Empty",
       "usernameNotEmpty":"Username must not be Empty",
 
+
+
+      "tabToScan":"TAB TO SCAN",
+      "tabToScanTxt":"This app will require access to the camera.",
+
     };
 
     const Map<String, String> lang_gr = {
@@ -72,12 +77,12 @@ class LocalizationClass extends Translations {
       "admin": "διαχειριστής",
       "scan": "σάρωση",
       // "scan": "Σάρωση",
-      "userName": "oνομα χρήστη",
+      "userName": "Όν.Χρήστη",
       "enterUserName": "Εισαγάγετε το όνομα χρήστη σας",
-      "userPass": "Κωδικός πρόσβασης",
+      "userPass": "Κωδικός",
       "enterUserPass": "Εισάγετε τον κωδικό σας",
-      "login": "σύνδεση",
-      // "login": "Σύνδεση",
+      // "login": "σύνδεση",
+      "login": "Σύνδεση",
       "loginSuccess": "Επιτυχία σύνδεσης",
       "loginSuccessTxt": "Ο διαχειριστής συνδέθηκε με επιτυχία",
       "loginFailed": "Η σύνδεση απέτυχε",
@@ -89,9 +94,9 @@ class LocalizationClass extends Translations {
       "logout": "Αποσύνδεση",
 
 
-      "oldPassword": "ΠΑΛΙΟΣ ΚΩΔΙΚΟΣ",
-      "newPassword": "νέος κωδικός πρόσβασης",
-      "confirmPassword": "Επιβεβαίωση Κωδικού",
+      "oldPassword": "Παλιός Κωδικός",
+      "newPassword": "Νέος Κωδικός",
+      "confirmPassword": "Επαλήθευση Κωδικού",
       "oldPasswordTxt": "Εισαγάγετε τον παλιό σας κωδικό πρόσβασης",
       "newPasswordTxt": "Εισαγάγετε τον νέο σας κωδικό πρόσβασης",
       "confirmPasswordTxt": "Επιβεβαιώστε τον κωδικό πρόσβασής σας",
@@ -105,21 +110,21 @@ class LocalizationClass extends Translations {
       "addVehicle":"Προσθήκη οχήματος",
       "vehicleServices":"Υπηρεσίες οχημάτων",
       "addService":"Προσθήκη υπηρεσίας",
-      "save":"σώσει",
+      "save":"Καταχώρηση",
       "cancel":"Aκυρο",
       // "save":"Σώσει",
 
-      "vehicleNumber":"Αριθμός οχήματος",
+      "vehicleNumber":"Αριθμός Κυκλοφορίας",
       "maker":"Κατασκευαστής",
-      "manufactureYear":"Eτος Κατασκευής",
-      "model":"Μοντέλο",
+      "manufactureYear":"Έτος Κατασκευής",
+      "model":"Κωδικός Κινητήρα",
       "engineNumber":"Αριθμός μηχανής",
-      "vin":"VIN",
+      "vin":"Αριθμός Πλαισίου",
 
-      "dateVisit":"Ημερομηνία Επίσκεψη",
-      "mileage":"Απoσταση σε μίλια",
-      "workDescription":"Περιγραφή Εργασίας",
-      "observations":"Παρατηρήσεις",
+      "dateVisit":"Ημερομηνία Επίσκεψης",
+      "mileage":"Χιλιόμετρα",
+      "workDescription":"Περιγραφή Εργασιών",
+      "observations":"Παρατηρήσεις Ελέγχου",
 
 
 
@@ -130,6 +135,8 @@ class LocalizationClass extends Translations {
       "passNotEmpty":"Ο κωδικός πρόσβασης δεν πρέπει να είναι κενός",
       "usernameNotEmpty":"Το όνομα χρήστη δεν πρέπει να είναι κενό",
 
+      "tabToScan":"Tab To Scan",
+      "tabToScanTxt":"This app will require access to the camera",
 
     };
 

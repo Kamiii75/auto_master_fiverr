@@ -1,5 +1,6 @@
 import 'package:auto_master_fiverr/ui/screens/show_vehicle_services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -50,31 +51,30 @@ class ShowAllScreens extends StatelessWidget {
               )
             ],
           ),
-          body: Padding(
-            padding: EdgeInsets.all(1.h),
+          body: Container(
+            decoration: ConstColors.mainDecoration,
+
             child: ListView.builder(
               itemCount: provider.listVehicles.length,
-              itemBuilder: (context, index) => GestureDetector(
-                onTap: () async {
-                 BlocProvider.of<SystemBloc>(context)
-                      .add(ChangeDocId(docid: provider.listVehicles[index].id));
-                  await provider.getSingleVehicle(context,provider.listVehicles[index].id);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ShowVehicleServices()));
-                },
-                child: Container(
-                  padding: EdgeInsets.all(.5.h),
-                  margin: EdgeInsets.all(.5.h),
-                  decoration: BoxDecoration(
-                      color: ConstColors.kPrimaryColor.withOpacity(.2),
-                      borderRadius: BorderRadius.circular(5.w)),
+              itemBuilder: (context, index) => Padding(
+                padding:  EdgeInsets.all(2.w),
+                child: NeumorphicButton(
+                  style: ConstColors.neumorphicStyle,
+
+                  onPressed: () async {
+                   BlocProvider.of<SystemBloc>(context)
+                        .add(ChangeDocId(docid: provider.listVehicles[index].id));
+                    await provider.getSingleVehicle(context,provider.listVehicles[index].id);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ShowVehicleServices()));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: 60.w,
+                        width: 55.w,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -115,7 +115,7 @@ class ShowAllScreens extends StatelessWidget {
                         foregroundColor: Colors.black,
                         data: provider.listVehicles[index].id,
                         version: QrVersions.auto,
-                        size: 30.w,
+                        size: 25.w,
                       ),
                     ],
                   ),

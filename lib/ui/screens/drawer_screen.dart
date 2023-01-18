@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../core/blocs/bloc_export.dart';
+import '../../core/constants/const_colors.dart';
 
 class DrawerScreen extends StatelessWidget {
   const DrawerScreen({Key? key}) : super(key: key);
@@ -20,64 +21,79 @@ class DrawerScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 6.5.h),
             child: Drawer(
               backgroundColor: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  DrawerHeader(child: Image.asset('assets/images/logo.jpeg')),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  ListTile(
-                    onTap: () =>
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const AdminScreen())),
-                    title: Text(
-                      'admin'.tr,
-                      style: ConstStyles.kBoldTextStyle,
+              child: Container(
+                decoration: ConstColors.mainDecoration,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    DrawerHeader(child: Image.asset('assets/images/logo.jpeg')),
+                    SizedBox(
+                      height: 20.h,
                     ),
-                    leading: const Icon(Icons.account_circle,color: Colors.black,),
-                  ),
-                 state.isAdmin? ListTile(
-                    onTap: () =>
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ChangePassword())),
-                    title: Text(
-                      'changePassword'.tr,
-                      style: ConstStyles.kBoldTextStyle,
+                    ListTile(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AdminScreen())),
+                      title: Text(
+                        'admin'.tr,
+                        style: ConstStyles.kBoldTextStyle,
+                      ),
+                      leading: const Icon(
+                        Icons.account_circle,
+                        color: Colors.black,
+                      ),
                     ),
-                   leading: const Icon(Icons.lock,color: Colors.black,),
-
-                 ):Container(),
-                  state.isAdmin?  ListTile(
-                    onTap: () =>
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ShowAllScreens())),
-                    title: Text(
-                      'allVehicles'.tr,
-                      style: ConstStyles.kBoldTextStyle,
-                    ),
-                    leading: const Icon(Icons.car_crash_sharp,color: Colors.black,),
-
-                  ):Container(),
-                  state.isAdmin?  ListTile(
-                    onTap: ()=>BlocProvider.of<SystemBloc>(context)
-                        .add(const ChangeAdmin(admin: false)),
-                    title: Text(
-
-
-                      'logout'.tr,
-                      style: ConstStyles.kBoldTextStyle,
-                    ),
-                    leading: const Icon(Icons.logout,color: Colors.black,),
-
-                  ):Container(),
-                ],
+                    state.isAdmin
+                        ? ListTile(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ChangePassword())),
+                            title: Text(
+                              'changePassword'.tr,
+                              style: ConstStyles.kBoldTextStyle,
+                            ),
+                            leading: const Icon(
+                              Icons.lock,
+                              color: Colors.black,
+                            ),
+                          )
+                        : Container(),
+                    state.isAdmin
+                        ? ListTile(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ShowAllScreens())),
+                            title: Text(
+                              'allVehicles'.tr,
+                              style: ConstStyles.kBoldTextStyle,
+                            ),
+                            leading: const Icon(
+                              Icons.car_crash_sharp,
+                              color: Colors.black,
+                            ),
+                          )
+                        : Container(),
+                    state.isAdmin
+                        ? ListTile(
+                            onTap: () => BlocProvider.of<SystemBloc>(context)
+                                .add(const ChangeAdmin(admin: false)),
+                            title: Text(
+                              'logout'.tr,
+                              style: ConstStyles.kBoldTextStyle,
+                            ),
+                            leading: const Icon(
+                              Icons.logout,
+                              color: Colors.black,
+                            ),
+                          )
+                        : Container(),
+                  ],
+                ),
               ),
             ),
           ),
